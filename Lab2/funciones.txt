@@ -1,0 +1,10 @@
+-Funcion que random 3 numeros retorne ip -> 1 - 2 - 3 -> 5671,2,3
+-(NAMENODE) recibir un string formato, sacar <TIPO - ID - DATANODE>  guardarlo en txt
+-Interfaz de piden datos CATEGORIA pide.
+-(NAMENODE) reciba una categoria y printee los todos ID y DATENODE 
+
+
+MAQ1: NAME NODE DATA.txt
+MAQ2: DATANODE 1  DATA.txt
+MAQ3: REBELDES DATANODE 2  DATA.txt
+MAQ4: COMBINE  DATANODE 3 DATA.txt
