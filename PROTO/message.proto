@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package grpc;
+
+option go_package = "SD/LAB1/proto";
+
+message Message {
+    string body = 1;
+    bool type = 2; //True pedir - False Guardar
+}
+
+service MessageService {
+    rpc Intercambio (Message) returns (Message);
+}
