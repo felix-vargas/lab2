@@ -27,6 +27,57 @@ func DateNodeRandom() (Nombre_DateNode string, IP string) {
 	}
 }
 
+func RevisarID(ID string) bool {
+	file, err := os.Open("DATA.txt")
+
+	if err != nil {
+		log.Fatalf("failed creating file: %s", err)
+	}
+
+	scanner := bufio.NewScanner(file)
+
+	for scanner.Scan() {
+
+		Split_Msj := strings.Split(scanner.Text(), ":")
+		if Split_Msj[1] == ID {
+
+			file.Close()
+			return false
+
+		}
+	}
+
+	file.Close()
+	return true
+
+}
+
+func RetornarData(Tipo string) string {
+	file, err := os.Open("DATA.txt")
+
+	if err != nil {
+		log.Fatalf("failed creating file: %s", err)
+	}
+
+	StringRetorno := ""
+
+	scanner := bufio.NewScanner(file)
+
+	for scanner.Scan() {
+
+		Split_Msj := strings.Split(scanner.Text(), ":")
+
+		if Split_Msj[0] == Tipo {
+
+			StringRetorno = StringRetorno + Split_Msj[1] + ":" + Split_Msj[2] + "\n"
+
+		}
+	}
+
+	file.Close()
+	return StringRetorno
+}
+
 func main() {
 
 	file, err := os.Create("DATA.txt")
